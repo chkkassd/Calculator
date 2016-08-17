@@ -36,6 +36,12 @@ class CalculatorBrain {
         case Equals
     }
     
+    /** # ddddd 
+    * aaa
+    * peter
+     [百度](www.baidu.com)
+     ![haha](icon_money.png)
+    */
     func performOperation(symbol: String) {
         internalProgram .append(symbol)
         if let operation = operations[symbol] {
