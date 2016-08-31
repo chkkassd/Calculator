@@ -35,7 +35,7 @@ class CalculatorBrain {
         case BinaryOperation((Double, Double) -> Double)
         case Equals
     }
-    
+
     func performOperation(symbol: String) {
         internalProgram .append(symbol)
         if let operation = operations[symbol] {
@@ -52,26 +52,6 @@ class CalculatorBrain {
         }
     }
     
-    
-    /**
-     slkdfjldsjflk  
-     dsjf
-     # This is a heading
-     
-     [dd](http://www.baidu.com)  
-     
-     [hh][haha]  
-     
-     [haha]: http://www.baidu.com
-     *jk*  
-     
-     _lk_
-     Use the `printf()` function.  
-     <http://www.baidu.com>
-     
-     ___
-
- */
     private func executePendingOpeartion() {
         if pending != nil {
             accumulator = pending!.binaryOperation(pending!.firstOperand, accumulator)
