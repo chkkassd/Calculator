@@ -64,3 +64,40 @@ func working(robot: Robot) throws -> Int{
 
 let myRobot = Robot()
 let a = try? working(myRobot)
+
+
+
+enum Result<T> {
+    case Success(T)
+    case Fail(String)
+}
+
+func newDevide(dividend: Double, by: Double) -> Result<Double> {
+    if by == 0 {
+        return Result.Fail("Cannot divide by zero")
+    } else {
+        return Result.Success(dividend/by)
+    }
+}
+
+let r = newDevide(4, by: 2)
+
+
+var numbers = [1,2,3,4]
+let haha = numbers.reduce(0){$0 + $1}
+print(haha)
+
+extension Array {
+    func myReduce<C,T>(initail: C, combine:(C,T) -> C) -> C {
+        var seed = initail
+        
+        for i in self {
+            seed = combine(seed,i as! T)
+        }
+        return seed
+    }
+}
+
+let hehe = numbers.myReduce(0) {$0 + $1}
+print(hehe)
+
