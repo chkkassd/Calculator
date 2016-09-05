@@ -13,6 +13,7 @@
 		910703061D349A5000CD0C21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 910703051D349A5000CD0C21 /* Assets.xcassets */; };
 		910703091D349A5000CD0C21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 910703071D349A5000CD0C21 /* LaunchScreen.storyboard */; };
 		910703121D3792BA00CD0C21 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910703111D3792BA00CD0C21 /* CalculatorBrain.swift */; };
+		917859B01D79819A00CAD92A /* ddd.m in Sources */ = {isa = PBXBuildFile; fileRef = 917859AF1D79819A00CAD92A /* ddd.m */; };
 		91AC6F131D64724C0023BE0F /* icon_money.png in Resources */ = {isa = PBXBuildFile; fileRef = 91AC6F121D64724C0023BE0F /* icon_money.png */; };
 /* End PBXBuildFile section */
 
@@ -25,9 +26,10 @@
 		910703081D349A5000CD0C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9107030A1D349A5000CD0C21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		910703111D3792BA00CD0C21 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
-		91AC6F111D6464DA0023BE0F /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		917859AD1D79819A00CAD92A /* Calculator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Calculator-Bridging-Header.h"; sourceTree = "<group>"; };
+		917859AE1D79819A00CAD92A /* ddd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ddd.h; sourceTree = "<group>"; };
+		917859AF1D79819A00CAD92A /* ddd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ddd.m; sourceTree = "<group>"; };
 		91AC6F121D64724C0023BE0F /* icon_money.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_money.png; sourceTree = "<group>"; };
-		91BDBAC11D781BAE00D1BC33 /* Swift Standard Library.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Swift Standard Library.playground"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +62,13 @@
 		910702FD1D349A5000CD0C21 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				91BDBAC11D781BAE00D1BC33 /* Swift Standard Library.playground */,
-				91AC6F111D6464DA0023BE0F /* MyPlayground.playground */,
 				910703101D349E2A00CD0C21 /* Supporting Files */,
 				910703001D349A5000CD0C21 /* ViewController.swift */,
 				910703111D3792BA00CD0C21 /* CalculatorBrain.swift */,
 				910703021D349A5000CD0C21 /* Main.storyboard */,
+				917859AE1D79819A00CAD92A /* ddd.h */,
+				917859AF1D79819A00CAD92A /* ddd.m */,
+				917859AD1D79819A00CAD92A /* Calculator-Bridging-Header.h */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -115,6 +118,7 @@
 					910702FA1D349A5000CD0C21 = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -155,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				917859B01D79819A00CAD92A /* ddd.m in Sources */,
 				910703121D3792BA00CD0C21 /* CalculatorBrain.swift in Sources */,
 				910703011D349A5000CD0C21 /* ViewController.swift in Sources */,
 				910702FF1D349A5000CD0C21 /* AppDelegate.swift in Sources */,
@@ -272,10 +277,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ssf.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Calculator/Calculator-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -284,10 +294,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ssf.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Calculator/Calculator-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

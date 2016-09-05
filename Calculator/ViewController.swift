@@ -58,6 +58,8 @@ class ViewController: UIViewController {
             brain.performOperation(mathematicalSymble)
         }
         displayValue = brain.result
+        
     }
+    
 }
 
